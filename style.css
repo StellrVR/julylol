@@ -1,0 +1,301 @@
+@font-face {
+    font-family: 'DotGothic16';
+    src: url('/fonts/DotGothic16-Regular.woff2') format('woff2'), url('/fonts/DotGothic16-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Colors and fonts */
+:root {
+   /* Fonts */
+   --bodyfont: DotGothic16;
+   --headerfont: DotGothic16, serif;
+
+   /* Main colors */
+   --background:url('img/cyberpunk_bg.gif');
+   --color:#fff;
+   --block:#000;
+
+   --link:#a649a9;
+   --linkhover:#fff;
+
+   --h1:#fff;
+   --h2:#fff;
+   --h3:#fff;
+   --h4:#fff;
+
+   /* Sidebar colors */
+   --sidebar:#000;
+   --sidebarcolor:#fff;
+   --title: #fff;
+   --sidebarlink: #fff;
+   --sidebarlinkhover:#fff;
+
+   /* Menu colors */
+   --menubg:#fff;
+   --menucolor:#e0aee2;
+   --menubghover:#e0aee2;
+   --menucolorhover:#fff;
+}
+
+* { margin:0; padding:0; }
+
+/* Main body styling */
+body {
+   background:var(--background);
+   background-attachment:fixed;
+   background-size: cover;
+   background-repeat: no-repeat;
+   font:1rem var(--bodyfont);
+   color:var(--color);
+}
+
+
+main section, #sidebar-content, #main-footer {
+   border:#fff .2px solid;
+   box-shadow: 0 0 .2rem #fff, 0 0 .2rem #fff, 0 0 2rem #a649a9, 0 0 0.8rem #a649a9, 0 0 2.8rem #a649a9, inset 0 0 .5rem #a649a9;
+   border-radius:5px;
+}
+
+.button-hover {
+    transition: transform 0.2s ease-in-out;
+}
+
+.button-hover img:hover {
+    transform: scale(1.2);
+}
+
+/* Sidebar styling */
+
+#sidebar-content {
+   text-align:center;
+   background: var(--sidebar);
+   color: var(--sidebarcolor);
+   padding:10px;
+   margin-bottom: 15px;
+}
+
+#sidebar-content header {
+   color:var(--title);
+   font:1.8em var(--headerfont);
+   margin:8px;
+}
+
+#sidebar-content p a {
+   color:var(--sidebarlink);
+   transition:0.5s ease;
+}
+
+#sidebar-content p a:hover {
+   color:var(--sidebarlinkhover);
+   transition:0.5s ease;
+}
+
+.icon img {
+   border-radius:100%;
+   max-width:150px;
+}
+
+/* Styling for the menu */
+
+#main-menu {
+   font:1.1em var(--headerfont);
+   width:100%;
+}
+
+#main-menu ul {
+   list-style:none;
+}
+
+#main-menu li a {
+   padding:7px;
+   color:var(--menucolor);
+   text-decoration:none;
+   transition: all 0.5s ease-in-out;
+}
+
+#main-menu li a:hover, #main-menu li a:focus {
+   color:var(--menucolorhover);
+   letter-spacing: 3px;
+   transition:all 0.5s ease;
+}
+
+/* Content styling */
+
+main {
+   margin-top:10px;
+}
+
+/* Styling for blocks */
+
+main section, #main-footer {
+   padding:15px;
+   background:var(--block);
+   margin-bottom:10px;
+   overflow-y: auto;
+   overflow: hidden;
+}
+
+main h1 {
+   font:1.8em var(--headerfont);
+   color:var(--h1);
+}
+
+main h2 {
+   font:1.5em var(--headerfont);
+   color:var(--h2);
+}
+
+main h3 {
+   font:1.3em var(--headerfont);
+   color:var(--h3);
+}
+
+main h4 {
+   font:1em var(--headerfont);
+   font-style:italic;
+   color:var(--h4);
+}
+
+p {
+   line-height:1.5;
+   margin:10px 0 10px 0;
+   width: 100%;
+}
+
+main a {
+   color:var(--link);
+   transition:0.5s ease;
+}
+
+main a:hover, main a:focus {
+   color:var(--linkhover);
+   transition:0.5s ease;
+}
+
+main ul {
+   list-style-position: outside;
+   margin-left: 25px;
+}
+
+main ul li {
+   line-height:1.5;
+}
+
+main img {
+   max-width:100%;
+}
+
+main input, select, button { 
+   background: var(--block);  
+   color: var(--color);
+   font: 1rem var(--bodyfont); 
+   border: 1px solid; 
+   padding: 8px; 
+   margin: 2px;
+}
+
+textarea {
+   background: var(--block);
+   max-width: 100px;
+   overflow: hidden;
+   color: var(--color);
+}
+
+#main-footer {
+   text-align:center;
+}
+
+/* Mobile screens */
+
+/* Container styling */
+#container {
+   width: calc(100% - 20px);
+   padding:10px;
+   margin-top:10px;
+}
+
+#sidebar-content {
+   width: calc(100% - 20px);
+}
+
+#main-menu li {
+   margin-bottom:15px;
+   display:inline-block;
+}
+
+/* Skip to content button */
+
+#skip a {
+   position:absolute;
+   display:inline-block;
+   left:0px;
+   top:-1000px;
+   overflow:hidden;
+   transition:top 0.5s ease;
+   background:var(--block);
+   color:var(--link);
+   z-index:1000;
+   padding:5px;
+}
+
+#skip a:focus {
+   top: 0;
+   transition:top 0.5s ease;
+}
+
+/* The following CSS ONLY applies to desktop/big screens */
+
+@media screen and (min-width: 800px) {
+   #container {
+       max-width:950px;
+       width:90%;
+       margin:25px auto;
+       display:flex;
+       gap:20px;
+   }
+
+   #sidebar {
+       flex: 1 1 calc(25% - 20px);
+       margin-top:10px;
+   }
+
+   /* Make menu links into a column */
+
+   #main-menu li {
+       display:block;
+       margin:0;
+   }
+
+   #main-menu li a {
+       display:block;
+       border-bottom:1px solid;
+   }
+
+   main {
+       flex: 1 1 calc(75% - 30px);
+       display:flex;
+       flex-wrap: wrap;
+       gap:10px;
+   }
+
+   main section {
+       margin:0;
+       overflow-x: hidden;
+       overflow-y: auto;
+   }
+   
+   #main-footer {
+       height: 90px;
+       flex: 1 1 calc(100% - 40px);
+   }
+
+   /* Defining grid blocks */
+
+   .full { flex: 1 1 calc(100% - 40px);}
+   .half { flex: 1 1 calc(50% - 40px);}
+   .third { flex: 1 1 calc(33% - 40px); height: 260px; overflow-x: hidden; overflow-y: auto;}
+   .twothird { flex: 1 1 calc(66% - 40px); height: 260px; overflow-x: hidden; overflow-y: auto;}
+   .quarter { flex: 1 1 calc(25% - 40px);}
+   .threequarter { flex: 1 1 calc(75% - 40px);}
+}
